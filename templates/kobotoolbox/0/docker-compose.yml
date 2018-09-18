@@ -251,6 +251,9 @@ services:
       - KOBOCAT_WEB_SERVER=${PROXY_WEB_SERVER}
       - KOBOCAT_STATIC_FILES_SERVER=Nginx
       - KPI_STATIC_FILES_SERVER=Nginx
+      # New timeout: 2 - 2.5 hours
+      - CELERYD_TASK_TIME_LIMIT=7200
+      - CELERYD_TASK_SOFT_TIME_LIMIT=9000
 
       - ENKETO_PROTOCOL=${KOBOTOOLBOX_PROTOCOL}
 
@@ -329,6 +332,9 @@ services:
       - KOBOCAT_WEB_SERVER=${PROXY_WEB_SERVER}
       - KOBOCAT_STATIC_FILES_SERVER=Nginx
       - KPI_STATIC_FILES_SERVER=Nginx
+      # New timeout: 2 - 2.5 hours
+      - CELERYD_TASK_TIME_LIMIT=7200
+      - CELERYD_TASK_SOFT_TIME_LIMIT=9000
 
       - EMAIL_BACKEND=django.core.mail.backends.smtp.EmailBackend
       - EMAIL_HOST=${EMAIL_HOST}
